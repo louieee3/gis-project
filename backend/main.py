@@ -113,7 +113,7 @@ logging.basicConfig(
 )
 
 # --- 2. 配置 AI API ---
-API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-05dd8dca6c2e4a4f93faf386dba29616")
+API_KEY = os.environ.get("DEEPSEEK_API_KEY", "YOUR_API_KEY")
 CHAT_API_URL = "https://api.deepseek.com/chat/completions"
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "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").strip()
 TAVILY_SEARCH_URL = "https://api.tavily.com/search"
