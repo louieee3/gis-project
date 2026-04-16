@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+requests
+python-multipart
+rio-tiler
+numpy
+shapely
+rasterio
+affine
+affine
+pyproj
+pandas
+openpyxl

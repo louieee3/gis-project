@@ -1,0 +1,197 @@
+/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px 12px 12px;
+  gap: 10px;
+  overflow: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f3f7ff 0%, #eef3fb 40%, #f8fafc 100%);
+}
+
+.app-header {
+  flex-shrink: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #1e3a5f 0%, #2563eb 65%, #3b82f6 100%);
+  border-radius: 12px;
+  padding: 0 18px;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.28);
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-title-icon {
+  font-size: 18px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+.app-title-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.app-title-year {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.app-body {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.map-section {
+  flex: 7; /* 地图占 70% */
+  position: relative;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: #0f172a;
+}
+
+.sidebar-section {
+  flex: 3; /* 侧边栏占 30% */
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.chat-scroll-area,
+.history-scroll-area,
+.analysis-scroll-area,
+.feature-drawer-scroll,
+.oc-scroll,
+.floating-chat .chat-scroll-area,
+.floating-chat .history-scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: #8ba6d9 transparent;
+}
+
+.analysis-scroll-area {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-scroll-area::-webkit-scrollbar,
+.history-scroll-area::-webkit-scrollbar,
+.analysis-scroll-area::-webkit-scrollbar,
+.feature-drawer-scroll::-webkit-scrollbar,
+.oc-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.analysis-scroll-area::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.chat-scroll-area::-webkit-scrollbar-track,
+.history-scroll-area::-webkit-scrollbar-track,
+.analysis-scroll-area::-webkit-scrollbar-track,
+.feature-drawer-scroll::-webkit-scrollbar-track,
+.oc-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll-area::-webkit-scrollbar-thumb,
+.history-scroll-area::-webkit-scrollbar-thumb,
+.analysis-scroll-area::-webkit-scrollbar-thumb,
+.feature-drawer-scroll::-webkit-scrollbar-thumb,
+.oc-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #9fb7e6 0%, #6f90d2 100%);
+}
+
+@media (max-width: 1200px) {
+  .app-container {
+    gap: 6px;
+    padding: 8px 8px 8px;
+  }
+
+  .app-body {
+    gap: 8px;
+  }
+
+  .map-section {
+    flex: 6;
+  }
+
+  .sidebar-section {
+    flex: 4;
+    padding: 12px;
+  }
+}
+
+#map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f4f8ff 0%, #e8f0ff 40%, #f4f8ff 80%);
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.25s linear infinite;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes ocFillBar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes ocStepActivate {
+  0%   { background: #f1f5f9; border-color: #cbd5e1; color: #94a3b8; }
+  50%  { background: #dbeafe; border-color: #3b82f6; color: #2563eb;
+         box-shadow: 0 0 0 4px rgba(59,130,246,0.12); }
+  100% { background: #dcfce7; border-color: #16a34a; color: #16a34a;
+         box-shadow: none; }
+}
+
+@keyframes ocCheckIn {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
